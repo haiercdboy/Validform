@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Validform demo -- 一行代码搞定整站的表单验证！</title>
+<meta name="Keywords" content=" " />
+<meta name="Description" content=" " />
+<link href="css/css.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<h1>提示效果一：弹出框提示</h1>
+<form class="registerform">
+    <table width="100%" style="table-layout:fixed;">
+        <tr>
+            <td class="need" style="width:10px;">*</td>
+            <td style="width:70px;">用户名：</td>
+            <td style="width:205px;"><input type="text" value="" name="name" class="inputxt" datatype="s6-18" ajaxurl="valid.php" errormsg="昵称至少6个字符,最多18个字符！" /></td>
+            <td><div class="Validform_checktip"></div></td>
+        </tr>
+        <tr>
+            <td class="need"></td>
+            <td>真实姓名：</td>
+            <td><input type="text" value="" name="username" class="inputxt" datatype="s" ignore="ignore" errormsg="请输入您的真实姓名！"  /></td>
+            <td><div class="Validform_checktip"></div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>移动电话：</td>
+            <td><input type="text" value="" name="tel" class="inputxt" datatype="m" errormsg="请输入您的手机号码！"  /></td>
+            <td><div class="Validform_checktip"></div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>备注：</td>
+            <td colspan="2">
+            	<textarea tip="请在这里输入您的意见。" errormsg="很感谢您花费宝贵时间给我们提供反馈，请填写有效内容！"  datatype="s" altercss="gray" class="gray" name="msg" value="">请在这里输入您的意见。</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="need"></td>
+            <td colspan="3" class="tip">
+                <input type="checkbox" class="rt2" name="legal" id="legal" datatype="checkbox" errormsg="阅读并同意会员条款才能进入下一步！" /><label for="legal">我已阅读并同意《会员隐私条款》</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="need"></td>
+            <td></td>
+            <td colspan="2" style="padding:10px 0 18px 0;">
+                <input type="submit" value="提 交" /> <input type="reset" value="重 置" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<h1>提示效果二：右侧提示</h1>
+<form class="registerform">
+    <table width="100%" style="table-layout:fixed;">
+        <tr>
+            <td class="need" style="width:10px;">*</td>
+            <td style="width:70px;">用户名：</td>
+            <td style="width:205px;"><input type="text" value="" name="name" class="inputxt" datatype="s6-18" ajaxurl="valid.php" nullmsg="请输入用户名！" errormsg="昵称至少6个字符,最多18个字符！" /></td>
+            <td><div class="Validform_checktip">昵称至少6个字符,最多18个字符</div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>密码：</td>
+            <td><input type="password" value="" name="userpassword" class="inputxt" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间,不能使用空格！" /></td>
+            <td><div class="Validform_checktip">密码范围在6~16位之间,不能使用空格</div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>确认密码：</td>
+            <td><input type="password" value="" name="userpassword2" class="inputxt" datatype="*" recheck="userpassword" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" /></td>
+            <td><div class="Validform_checktip">两次输入密码需一致</div></td>
+        </tr>
+        <tr>
+            <td class="need"></td>
+            <td>Email：</td>
+            <td><input type="text" value="" name="email" class="inputxt" datatype="e" ignore="ignore" nullmsg="请输入您常用的邮箱！" errormsg="请输入您常用的邮箱！" /></td>
+            <td><div class="Validform_checktip">请输入您常用的邮箱</div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>性别：</td>
+            <td><input type="radio" value="1" name="gender" id="male" class="pr1" datatype="radio" errormsg="请选择性别！" /><label for="male">男</label> <input type="radio" value="2" name="gender" id="female" class="pr1" /><label for="female">女</label></td>
+            <td><div class="Validform_checktip"></div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>省份：</td>
+            <td><select name="province" id="province" datatype="select" errormsg="请选择省份！" ><option value="">--请选择省份--</option><option value="1">江西省</option></select></td>
+            <td><div class="Validform_checktip"></div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>购物网：</td>
+            <td>
+            	<input name="shoppingsite2" class="rt2" id="shoppingsite21" type="checkbox"  value="1" datatype="checkbox" errormsg="请选择您常去的购物网站！" /><label for="shoppingsite21">淘宝网</label>&nbsp;&nbsp;
+				<input name="shoppingsite2" class="rt2" id="shoppingsite22" type="checkbox"  value="2" /><label for="shoppingsite22">当当网</label>
+            </td>
+            <td><div class="Validform_checktip"></div></td>
+        </tr>
+        <tr>
+            <td class="need"></td>
+            <td></td>
+            <td colspan="2" style="padding:10px 0 18px 0;">
+                <input type="submit" value="提 交" /> <input type="reset" value="重 置" />
+            </td>
+        </tr>
+    </table>
+</form>
+<br />
+
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="js/Validform.js"></script>
+<script type="text/javascript">
+$(function(){
+	//$(".registerform").Validform();  //就这一行代码！下面是演示两种不同的验证效果;
+	
+	//提示效果一;
+	$(".registerform:first").Validform();
+	
+	//提示效果二;
+	$(".registerform:last").Validform({
+		tiptype:2,
+		ajaxurl:"ajax_post.php",
+		callback:function(data){
+			//返回数据data是json格式，{"info":"demo info","status":"y"}
+			//info: 输出提示信息;
+			//status: 返回提交数据的状态,是否提交成功。如可以用"y"表示提交成功，"n"表示提交失败，在ajax_post.php文件返回数据里自定字符，主要用在callback函数里根据该值执行相应的回调操作;
+			//你也可以在ajax_post.php文件返回更多信息在这里获取，进行相应操作；
+			
+			//这里执行回调操作;
+			if(data.status=="y"){
+				setTimeout(function(){
+					$.Hidemsg(); //公用方法关闭信息提示框;
+				},2000);
+			}
+		}
+	});
+		
+	//调取公用方法显示信息提示框，可用于全站统一的弹出框提示效果;
+	//$.Showmsg("Test Info here!");  //公用方法显示信息提示框;
+})
+</script>
+</body>
+</html>
