@@ -1,6 +1,6 @@
 <?php
     header("Content-Type:text/html; charset=utf-8");
-	
+	//sleep(3);
 	//表单数据是以POST方式提交过来;
 	
 	//注意json数据必须严格按如下格式输出：{"info":"demo info","status":"y"};

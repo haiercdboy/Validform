@@ -54,7 +54,7 @@
 </form>
 
 <h1>提示效果二：右侧提示</h1>
-<form class="registerform">
+<form class="registerform" action="ajax_post.php">
     <table width="100%" style="table-layout:fixed;">
         <tr>
             <td class="need" style="width:10px;">*</td>
@@ -78,7 +78,7 @@
             <td class="need"></td>
             <td>Email：</td>
             <td><input type="text" value="" name="email" class="inputxt" datatype="e" ignore="ignore" nullmsg="请输入您常用的邮箱！" errormsg="请输入您常用的邮箱！" /></td>
-            <td><div class="Validform_checktip">请输入您常用的邮箱</div></td>
+            <td><div class="Validform_checktip"></div></td>
         </tr>
         <tr>
             <td class="need">*</td>
@@ -110,21 +110,120 @@
         </tr>
     </table>
 </form>
+
+<h1>提示效果三：【自定义提示效果】右侧提示，ajax提交时不弹出提示层</h1>
+<form class="registerform" action="ajax_post.php">
+    <table width="100%" style="table-layout:fixed;">
+		<tr>
+            <td class="need" style="width:10px;">*</td>
+            <td style="width:70px;">中文名：</td>
+            <td style="width:205px;"><input type="text" value="" name="name" class="inputxt" datatype="z2-4" ajaxurl="valid.php" nullmsg="请输入中文名！" errormsg="中文名为2~4个中文字符！" /></td>
+            <td><div class="Validform_checktip">中文名为2~4个中文字符！</div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>密码：</td>
+            <td><input type="password" value="" name="userpassword" class="inputxt" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间,不能使用空格！" /></td>
+            <td><div class="Validform_checktip">密码范围在6~16位之间,不能使用空格</div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td style="width:205px;">确认密码：</td>
+            <td><input type="password" value="" name="userpassword2" class="inputxt" datatype="*" recheck="userpassword" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" /></td>
+            <td><div class="Validform_checktip">两次输入密码需一致</div></td>
+        </tr>
+		<tr>
+            <td class="need"></td>
+            <td></td>
+            <td colspan="2" style="padding:10px 0 18px 0;">
+                <input type="submit" value="提 交" /> <input type="reset" value="重 置" /><span id="msgdemo" style="margin-left:30px;"></span>
+            </td>
+        </tr>
+	</table>
+</form>
+
+<h1>提示效果四：【自定义提示效果】固定位置显示提示信息</h1>
+<form class="registerform" action="ajax_post.php">
+    <table width="100%" style="table-layout:fixed;">
+		<tr>
+            <td class="need" style="width:10px;">*</td>
+            <td style="width:70px;">用户名：</td>
+            <td style="width:205px;"><input type="text" value="" name="name" class="inputxt" datatype="s6-18" ajaxurl="valid.php" nullmsg="请输入用户名！" errormsg="昵称至少6个字符,最多18个字符！" /></td>
+            <td></td>
+        </tr>
+		<tr>
+            <td class="need"></td>
+            <td>真实姓名：</td>
+            <td><input type="text" value="" name="username" class="inputxt" datatype="s" ignore="ignore" errormsg="请输入您的真实姓名！"  /></td>
+            <td><div class="Validform_checktip"></div></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>密码：</td>
+            <td><input type="password" value="" name="userpassword" class="inputxt" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间,不能使用空格！" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td style="width:205px;">确认密码：</td>
+            <td><input type="password" value="" name="userpassword2" class="inputxt" datatype="*" recheck="userpassword" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" /></td>
+            <td></td>
+        </tr>
+		<tr>
+            <td class="need"></td>
+            <td></td>
+            <td colspan="2" style="padding:10px 0 18px 0;">
+                <input type="submit" value="提 交" /> <input type="reset" value="重 置" /><span id="msgdemo2" style="margin-left:30px;"></span>
+            </td>
+        </tr>
+	</table>
+</form>
+
+<h1>提示效果五：【自定义提示效果】使用自定义弹出框</h1>
+<form class="registerform" action="ajax_post.php">
+    <table width="100%" style="table-layout:fixed;">
+		<tr>
+            <td class="need" style="width:10px;">*</td>
+            <td style="width:70px;">中文名：</td>
+            <td style="width:205px;"><input type="text" value="" name="name" class="inputxt" datatype="z1-2" ajaxurl="valid.php" nullmsg="请输入中文名！" errormsg="中文名为2~4个中文字符！" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td>密码：</td>
+            <td><input type="password" value="" name="userpassword" class="inputxt" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间,不能使用空格！" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="need">*</td>
+            <td style="width:205px;">确认密码：</td>
+            <td><input type="password" value="" name="userpassword2" class="inputxt" datatype="*" recheck="userpassword" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" /></td>
+            <td></td>
+        </tr>
+		<tr>
+            <td class="need"></td>
+            <td></td>
+            <td colspan="2" style="padding:10px 0 18px 0;">
+                <input type="submit" value="提 交" /> <input type="reset" value="重 置" /><span id="msgdemo2" style="margin-left:30px;"></span>
+            </td>
+        </tr>
+	</table>
+</form>
 <br />
 
 <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
-<script type="text/javascript" src="js/Validform.js"></script>
+<script type="text/javascript" src="js/Validform_min.js"></script>
 <script type="text/javascript">
 $(function(){
-	//$(".registerform").Validform();  //就这一行代码！下面是演示两种不同的验证效果;
+	//$(".registerform").Validform();  //就这一行代码！下面是演示几种不同的验证效果;
 	
 	//提示效果一;
 	$(".registerform:first").Validform();
 	
 	//提示效果二;
-	$(".registerform:last").Validform({
+	$(".registerform:eq(1)").Validform({
 		tiptype:2,
-		ajaxurl:"ajax_post.php",
+		ajaxPost:true,
 		callback:function(data){
 			//返回数据data是json格式，{"info":"demo info","status":"y"}
 			//info: 输出提示信息;
@@ -138,6 +237,60 @@ $(function(){
 				},2000);
 			}
 		}
+	});
+	
+	
+	//提示效果三;
+	
+	//传入自定义datatype类型【方式一】;
+	//$.extend($.Datatype,{
+	//	"z2-4" : /^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/,
+	//	"*6-20": /^[^\s]{6,20}$/
+	//});
+	
+	$(".registerform:eq(2)").Validform({
+		tiptype:function(msg,o,cssctl){
+			//msg：提示信息;
+			//o:{obj:*,type:*}, obj指向的是当前验证的表单元素，type指示提示的状态，值为1、2、3、4， 1：正在检测/提交数据，2：通过验证，3：验证失败，4：提示ignore状态;
+			//cssctl:内置的提示信息样式控制函数，该函数需传入两个参数：显示提示信息的对象 和 当前提示的状态（既形参o中的type）;
+			if(o.obj){//o.obj不为空说明是在检测表单元素;
+				var objtip=o.obj.parent().next().find(".Validform_checktip");
+				cssctl(objtip,o.type);
+				objtip.text(msg);
+			}else{//o.obj为空说明是表单提交操作;
+				var objtip=$("#msgdemo");
+				cssctl(objtip,o.type);
+				objtip.text(msg);
+			}
+		},
+		datatype:{//传入自定义datatype类型【方式二】;
+			"z2-4" : /^[\u4E00-\u9FA5\uf900-\ufa2d]{2,4}$/,
+			"*6-20": /^[^\s]{6,20}$/
+		},
+		ajaxPost:true,
+		postonce:true
+	});
+	
+	//提示效果四;
+	$(".registerform:eq(3)").Validform({
+		tiptype:function(msg,o,cssctl){
+			var objtip=$("#msgdemo2");
+			cssctl(objtip,o.type);
+			objtip.text(msg);
+		},
+		ajaxPost:true
+	});
+	
+	//提示效果五;
+	var showmsg=function(msg){//假定你的信息提示方法为showmsg， 在方法里可以接收参数msg，当然也可以接收到o及cssctl;
+		alert(msg);
+	}
+	$(".registerform:eq(4)").Validform({
+		tiptype:function(msg){
+			showmsg(msg);
+		},
+		tipSweep:true,//为true时提示信息将只会在表单提交时触发显示，各表单元素blur时不会被触发显示;
+		ajaxPost:true
 	});
 		
 	//调取公用方法显示信息提示框，可用于全站统一的弹出框提示效果;
